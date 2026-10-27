@@ -1,0 +1,111 @@
+/* Server and Client Common Styles */
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-background-color: #f4f6f9;
+}
+
+.title-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.subtitle-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #64748b;
+}
+
+.status-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+}
+
+.status-online {
+    -fx-text-fill: #16a34a;
+}
+
+.status-offline {
+    -fx-text-fill: #dc2626;
+}
+
+.status-readonly {
+    -fx-text-fill: #d97706;
+}
+
+.button-primary {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.button-primary:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.button-danger {
+    -fx-background-color: #dc2626;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.button-danger:hover {
+    -fx-background-color: #b91c1c;
+}
+
+.button-secondary {
+    -fx-background-color: #475569;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.button-secondary:hover {
+    -fx-background-color: #334155;
+}
+
+.text-area {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 8px;
+    -fx-font-size: 13px;
+    -fx-font-family: "Consolas", "Courier New", monospace;
+}
+
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 6px;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 6px;
+    -fx-padding: 8px;
+    -fx-font-size: 13px;
+}
+
+.list-view {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 8px;
+}
+
+.header-panel {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 15px;
+}
+
+.card-panel {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.06), 6, 0, 0, 2);
+    -fx-padding: 12px;
+}

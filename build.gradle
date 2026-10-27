@@ -1,0 +1,47 @@
+plugins {
+    id 'base'
+}
+
+allprojects {
+    group = 'com.example'
+    version = '1.0.0'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+    }
+
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+        testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    }
+
+    tasks.named('test') {
+        useJUnitPlatform()
+    }
+}
+
+tasks.register('serverJar', Copy) {
+    dependsOn ':server:serverJar'
+    from project(':server').tasks.named('serverJar')
+    into layout.projectDirectory.dir('jars')
+}
+
+tasks.register('clientJar', Copy) {
+    dependsOn ':client:clientJar'
+    from project(':client').tasks.named('clientJar')
+    into layout.projectDirectory.dir('jars')
+}
+
+tasks.register('buildJars') {
+    dependsOn 'serverJar', 'clientJar'
+}

@@ -1,0 +1,32 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+javafx {
+    version = '21.0.2'
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.graphics']
+}
+
+dependencies {
+    implementation project(':common')
+}
+
+application {
+    mainClass = 'com.example.chat.TCPClientLauncher'
+}
+
+tasks.register('clientJar', Jar) {
+    dependsOn configurations.runtimeClasspath
+    archiveBaseName = 'TCPClient'
+    archiveClassifier = ''
+    archiveVersion = ''
+    manifest {
+        attributes 'Main-Class': 'com.example.chat.TCPClientLauncher'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    with jar
+}

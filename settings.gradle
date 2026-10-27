@@ -1,0 +1,2 @@
+rootProject.name = 'multiclient-chat'
+include 'common', 'server', 'client'
